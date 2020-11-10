@@ -8,7 +8,7 @@ const handle404 = customErrors.handle404
 
 const requireOwnership = customErrors.requireOwnership
 
-const removeBlanks = require('../../lib/remove_blank_feilds')
+const removeBlanks = require('../../lib/remove_blank_fields')
 
 const requireToken = passport.authenticate('bearer', { session: false })
 
@@ -45,4 +45,30 @@ router.post('/books', requireToken, (req, res, next) => {
     .catch(next)
 })
 
+// UPDATE
+router.patch('/books/:id', requireToken, removeBlanks, (req, res, next) => {
+  delete req.body.book.owner
+
+  Book.findById(req.params.id)
+    .then(handle404)
+    .then(book => {
+      requireOwnership(req, book)
+
+      return book.updateOne(req.body.book)
+    })
+    .then(() => res.sendStatus(204))
+    .catch(next)
+})
+
+// DESTROY
+router.delete('/books/:id', requireToken, (req, res, next) => {
+  Book.findById(req.params.id)
+    .then(handle404)
+    .then(book => {
+      requireOwnership(req, book)
+      book.deleteOne()
+    })
+    .then(() => res.sendStatus(204))
+    .catch(next)
+})
 module.exports = router
