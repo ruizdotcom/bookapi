@@ -1,6 +1,6 @@
 # Library
 
-This application allows the user to create a book with a title and author as and bring up the list of all their created books, users can also update and delete specific books. The reson I wanted to create this project was to keep track of the books users wanted read.
+This application allows the user to create a book with a title and author as and bring up the list of all their created books, users can also update and delete specific books. The reson I wanted to create this project was to keep track of the books users wanted to read.
 
 ## Important Links
 
@@ -33,12 +33,10 @@ During the planning I started by making a wireframe to get the general idea of w
 ## Images
 
 #### Wireframe:
-![wireframe]()
+![wireframe](https://media.git.generalassemb.ly/user/31159/files/9444cc80-27b6-11eb-9176-f93ddb6adf31)
 
 
 ---
 
 #### ERD:
-![ERD]()
-
-
+![ERD](https://media.git.generalassemb.ly/user/31159/files/695a7880-27b6-11eb-95a6-a2db21fd7814)
