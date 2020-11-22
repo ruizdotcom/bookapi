@@ -10,7 +10,7 @@ const requireOwnership = customErrors.requireOwnership
 
 const removeBlanks = require('../../lib/remove_blank_fields')
 
-const requireToken = passport.authentication('bearer', { session: false })
+const requireToken = passport.authenticate('bearer', { session: false })
 
 const router = express.Router()
 
