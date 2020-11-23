@@ -32,7 +32,7 @@ router.get('/movies/:id', requireToken, (req, res, next) => {
     .catch(next)
 })
 
-// create
+// CREATE
 router.post('/movies', requireToken, (req, res, next) => {
   req.body.movie.owner = req.user.id
   Movie.create(req.body.movie)
@@ -53,6 +53,8 @@ router.patch('/movies/:id', requireToken, removeBlanks, (req, res, next) => {
 
       return movie.updateOne(req.body.movie)
     })
+    .then(() => res.sendStatus(204))
+    .catch(next)
 })
 
 // DELETE

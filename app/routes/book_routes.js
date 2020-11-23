@@ -26,7 +26,6 @@ router.get('/books', requireToken, (req, res, next) => {
 })
 
 // SHOW
-// GET /examples/5a7db6c74d55bc51bdf39793
 router.get('/books/:id', requireToken, (req, res, next) => {
   Book.findById(req.params.id)
     .then(handle404)
@@ -35,7 +34,6 @@ router.get('/books/:id', requireToken, (req, res, next) => {
 })
 
 // CREATE
-// POST /examples
 router.post('/books', requireToken, (req, res, next) => {
   req.body.book.owner = req.user.id
   Book.create(req.body.book)
