@@ -5,7 +5,7 @@ This application allows the user to create a book with a title and author as and
 ## Important Links
 
 - [Other Repo](https://github.com/ruizdotcom/booksclient)
-- [Deployed API](https://salty-ridge-00839.herokuapp.com/)
+- [Deployed API](https://bookapi.onrender.com)
 - [Deployed Client](https://ruizdotcom.github.io/booksclient/)
 
 ## Planning Story
